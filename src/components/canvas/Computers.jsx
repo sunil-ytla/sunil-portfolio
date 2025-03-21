@@ -5,14 +5,10 @@ import { DRACOLoader } from "three/addons/loaders/DRACOLoader";
 import CanvasLoader from "../Loader";
 
 const ComputerModel = ({ isMobile }) => {
-  const { scene } = useGLTF(
-    "./desktop_pc/scene.gltf",
-    undefined,
-    (loader) => {
-      const dracoLoader = new DRACOLoader();
-      loader.setDRACOLoader(dracoLoader);
-    }
-  );
+  const { scene } = useGLTF("./desktop_pc/scene.gltf", undefined, (loader) => {
+    const dracoLoader = new DRACOLoader();
+    loader.setDRACOLoader(dracoLoader);
+  });
 
   return (
     <mesh>
